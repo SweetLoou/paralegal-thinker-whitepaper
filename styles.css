@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     min-height: 100vh;
-    color: #333;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -123,7 +123,7 @@ body {
 /* Content Container */
 .content-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 }
 
 .hidden {
@@ -151,14 +151,14 @@ body {
 .header h1 {
     font-size: 3rem;
     font-weight: 300;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
     font-size: 1.3rem;
-    color: #34495e;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
 }
 
@@ -377,13 +377,14 @@ body {
 .section-header h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-description {
     font-size: 1.2rem;
-    color: #7f8c8d;
+    color: rgba(255, 255, 255, 0.7);
     max-width: 600px;
     margin: 0 auto;
 }
