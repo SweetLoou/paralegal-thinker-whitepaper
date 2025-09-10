@@ -96,6 +96,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Focus on username input when page loads
     usernameInput.focus();
 
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetSection = this.getAttribute('data-section');
+
+            // Update active nav link
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show target section
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const targetElement = document.getElementById(targetSection);
+            if (targetElement) {
+                targetElement.classList.add('active');
+
+                // Smooth scroll to top of content
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
     // Add enter key support for better UX
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !contentContainer.classList.contains('hidden')) {

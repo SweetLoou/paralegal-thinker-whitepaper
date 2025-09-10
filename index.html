@@ -34,8 +34,18 @@
             </div>
         </header>
 
+        <nav class="main-nav">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="#white-paper" class="nav-link active" data-section="white-paper">White Paper</a></li>
+                    <li><a href="#articles" class="nav-link" data-section="articles">Articles</a></li>
+                    <li><a href="#guides" class="nav-link" data-section="guides">Guides</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <main class="main-content">
-            <div class="white-paper">
+            <div id="white-paper" class="content-section white-paper active">
                 <section class="abstract">
                     <h2>Abstract</h2>
                     <p>The current generation of AI tools for the legal profession, while powerful, often operates as monolithic systems susceptible to cognitive biases like "tunnel vision." This paper introduces the Paralegal Thinker framework, a novel multi-agent system designed to overcome these limitations. By deploying a team of specialized AI sub-agents to analyze legal problems in parallel, our framework produces more robust, comprehensive, and strategically sound insights. This approach not only enhances the quality of legal analysis but also redefines the role of the legal professional as an orchestrator of digital expertise, grounding AI-generated work product in firm-specific knowledge and strategy.</p>
@@ -74,6 +84,77 @@
                     <h2>5. Conclusion</h2>
                     <p>The era of monolithic AI in law is giving way to a more sophisticated, collaborative model. The Paralegal Thinker framework represents the next step in this evolution. By embracing parallel reasoning and grounding AI analysis in proprietary knowledge, we can mitigate the inherent risks of current models and unlock a new level of depth, efficiency, and strategic insight. This is not about replacing legal professionals, but about equipping them with a digital team capable of elevating their practice to new heights.</p>
                 </section>
+            </div>
+
+            <div id="articles" class="content-section articles">
+                <div class="section-header">
+                    <h2>Articles</h2>
+                    <p class="section-description">Latest insights and research on AI frameworks and problem-solving methodologies</p>
+                </div>
+
+                <article class="article-card">
+                    <div class="article-meta">
+                        <span class="article-date">September 2025</span>
+                        <span class="article-category">AI Research</span>
+                    </div>
+                    <h3>Beyond 'Ultrathink': A New Approach to Solving Stubborn Coding Problems with AI</h3>
+                    <p class="article-excerpt">Even the most advanced AI coding assistants can hit a wall. For users of Claude Code, a popular AI-powered coding tool, the ultrathink command represents the pinnacle of the model's reasoning power, allocating a massive 32,000 tokens to tackle a problem. But what happens when even this impressive budget isn't enough?</p>
+
+                    <div class="article-content">
+                        <p>A developer recently shared their experience with a persistent bug in their AI news mobile application, "Tensor AI." When a user scrolled horizontally through news categories and selected one, the application would frustratingly jump back to the beginning of the list after the new articles loaded. Turning to Claude Code, the developer employed the ultrathink command to devise a solution. The AI suggested a fix involving useRef to store the scroll position and restore it after the category change. However, upon implementation, the bug remained. The maximum thinking budget had been exhausted, yet the problem persisted.</p>
+
+                        <p>This is where a new research paper titled "ParaThinker" offers a compelling insight. The paper identifies a phenomenon called "tunnel vision," where a language model's initial approach to a problem can lock it into a suboptimal reasoning path. This means that simply allocating more tokens for the model to "think harder" along the same flawed path yields diminishing returns. The researchers found that the first few tokens generated often determine the direction of the entire reasoning process, and if that initial direction is flawed, more thinking power won't necessarily correct the course.</p>
+
+                        <p>The solution proposed by ParaThinker is to have the model generate several independent reasoning paths simultaneously. By exploring a problem from multiple angles, the chances of finding an optimal solution dramatically increase. For instance, when presented with a math problem, one reasoning path might attempt a geometric solution, while another tries an algebraic approach. The paper's results are striking: for a given token budget, splitting it across eight different reasoning paths resulted in a significantly higher accuracy score (77.5%) compared to allocating the entire budget to a single, sequential path (55.8%).</p>
+
+                        <p>While ParaThinker's approach requires fine-tuning a model, which isn't possible with closed-source models like Claude, a similar strategy can be employed. This is where the concept of a "majority" or "self-consistency" approach comes into play, a technique explored in a paper that is cited in the ParaThinker research. This method involves generating multiple independent responses to a prompt and then selecting the most consistent or frequently occurring answer. It leverages the idea that a complex problem can be solved in multiple ways, and the correct answer is likely to be reached through various valid reasoning paths.</p>
+
+                        <p>Inspired by this, the developer behind Tensor AI decided to try a new experiment. Instead of relying on a single instance of Claude Code with the ultrathink command, they created a "strategy analyzer" sub-agent. The core idea was to spawn eight of these sub-agents, each tasked with tackling the same bug but from a slightly different strategic perspective. To prevent conflicts, these agents were instructed not to write any code but to instead think through a solution based on their assigned strategy and provide a conclusion. The final implementation would then be based on the majority solution proposed by these sub-agents.</p>
+
+                        <p>The results of this multi-agent approach were a resounding success. While the ultrathink solution had failed to fix the bug, the solution derived from the collective reasoning of eight independent sub-agents worked perfectly. In the updated version of the Tensor AI app, when a user scrolls to a category like "Model Releases" and selects it, the horizontal scroll position is now correctly maintained.</p>
+
+                        <p>This real-world example demonstrates a powerful new tool for developers working with AI coding assistants. When faced with a particularly stubborn problem that even the highest thinking budgets can't solve, the issue may not be a lack of reasoning power but a case of "tunnel vision." By manually creating a system of parallel reasoning with multiple AI agents, developers can effectively sidestep this limitation.</p>
+
+                        <p>It's important to note that this multi-agent strategy is more token-intensive and should likely be reserved for the most challenging problems where commands like ultrathink have already failed. However, for those seemingly unsolvable bugs, this approach, inspired by the cutting-edge research of ParaThinker, offers a promising new path forward. It's a testament to the idea that in the world of AI, and perhaps in problem-solving in general, multiple diverse perspectives can often outperform a single, powerful line of thought.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div id="guides" class="content-section guides">
+                <div class="section-header">
+                    <h2>Guides</h2>
+                    <p class="section-description">Practical guides for implementing multi-agent AI frameworks</p>
+                </div>
+
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">🤖</div>
+                        <h3>Setting Up Multi-Agent Systems</h3>
+                        <p>A comprehensive guide to configuring and deploying multiple AI agents for collaborative problem-solving.</p>
+                        <span class="guide-status">Coming Soon</span>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">🎯</div>
+                        <h3>Overcoming AI Tunnel Vision</h3>
+                        <p>Learn how to identify and break out of cognitive biases in AI reasoning patterns.</p>
+                        <span class="guide-status">Coming Soon</span>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">⚖️</div>
+                        <h3>Legal Applications of ParaThinker</h3>
+                        <p>Implementing the Paralegal Thinker framework for legal analysis and case preparation.</p>
+                        <span class="guide-status">Coming Soon</span>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">🔧</div>
+                        <h3>Debugging with AI Agents</h3>
+                        <p>Using multiple AI perspectives to solve complex coding problems and bugs.</p>
+                        <span class="guide-status">Coming Soon</span>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
