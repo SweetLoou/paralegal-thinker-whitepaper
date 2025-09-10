@@ -128,6 +128,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('mobile-open');
+
+            // Update button text based on menu state
+            if (navMenu.classList.contains('mobile-open')) {
+                this.textContent = '✕'; // Close icon
+            } else {
+                this.textContent = '☰'; // Hamburger icon
+            }
+        });
+
+        // Close mobile menu when clicking on a nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('mobile-open');
+                    mobileMenuToggle.textContent = '☰';
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 &&
+                !navMenu.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('mobile-open');
+                mobileMenuToggle.textContent = '☰';
+            }
+        });
+    }
+
     // Add enter key support for better UX
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !contentContainer.classList.contains('hidden')) {
